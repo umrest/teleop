@@ -71,10 +71,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a66c4f97a76138aa62d865eee086ec0f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66cdbeaaae4fd5f65973d19d2cc19fd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a66cdbeaaae4fd5f65973d19d2cc19fd9">updateAll</a> ()</td></tr>
 <tr class="separator:a66cdbeaaae4fd5f65973d19d2cc19fd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc1d9a46fb5192978944da17360fc8e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#acc1d9a46fb5192978944da17360fc8e9">resetControls</a> (bool send)</td></tr>
+<tr class="separator:acc1d9a46fb5192978944da17360fc8e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57455153a96846d60dccf0b8366c9ce0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a57455153a96846d60dccf0b8366c9ce0">setInput</a> (int index, int value)</td></tr>
 <tr class="separator:a57455153a96846d60dccf0b8366c9ce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b35387f27e97e1812c3e2bf2f1ad0f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a1b35387f27e97e1812c3e2bf2f1ad0f7">sendMessage</a> ()</td></tr>
-<tr class="separator:a1b35387f27e97e1812c3e2bf2f1ad0f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9883383ea9a1a3dc43c5617479758adf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a9883383ea9a1a3dc43c5617479758adf">sendMessage</a> (bool force)</td></tr>
+<tr class="separator:a9883383ea9a1a3dc43c5617479758adf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2939e6d1d4a7a08215652f2f0034e1c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a2939e6d1d4a7a08215652f2f0034e1c5">readAndTransmit</a> ()</td></tr>
 <tr class="separator:a2939e6d1d4a7a08215652f2f0034e1c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_teleop_base"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_teleop_base')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_teleop_base.html">TeleopBase</a></td></tr>
@@ -133,25 +135,55 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Member function which reads controll input and transmits until the end. </p>
 
-<p>Definition at line <a class="el" href="_controller_8cpp_source.html#l00088">88</a> of file <a class="el" href="_controller_8cpp_source.html">Controller.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cpp_source.html#l00112">112</a> of file <a class="el" href="_controller_8cpp_source.html">Controller.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a1b35387f27e97e1812c3e2bf2f1ad0f7"></a>
+<a class="anchor" id="acc1d9a46fb5192978944da17360fc8e9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::resetControls </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>send</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Member function sets all controls to 0. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">send</td><td>- If true, sends reset message to rover. Useful when deactivating controls. Prevents continuous motion if controls are deactivated while movement commands are being given. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_controller_8cpp_source.html#l00035">35</a> of file <a class="el" href="_controller_8cpp_source.html">Controller.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9883383ea9a1a3dc43c5617479758adf"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Controller::sendMessage </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>force</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Member function sends std_msgs::UInt32 msg if the data has changed since the last message was sent. </p>
+<p>Member function sends std_msgs::UInt32 msg if the data has changed since the last message was sent. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">force</td><td>- If true forces send even is message is unchanged. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Definition at line <a class="el" href="_controller_8cpp_source.html#l00081">81</a> of file <a class="el" href="_controller_8cpp_source.html">Controller.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cpp_source.html#l00105">105</a> of file <a class="el" href="_controller_8cpp_source.html">Controller.cpp</a>.</p>
 
 </div>
 </div>
@@ -186,7 +218,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_controller_8cpp_source.html#l00048">48</a> of file <a class="el" href="_controller_8cpp_source.html">Controller.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cpp_source.html#l00056">56</a> of file <a class="el" href="_controller_8cpp_source.html">Controller.cpp</a>.</p>
 
 </div>
 </div>
@@ -204,7 +236,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Member function updates the data inherited variable with the current input values. </p>
 
-<p>Definition at line <a class="el" href="_controller_8cpp_source.html#l00042">42</a> of file <a class="el" href="_controller_8cpp_source.html">Controller.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cpp_source.html#l00029">29</a> of file <a class="el" href="_controller_8cpp_source.html">Controller.cpp</a>.</p>
 
 </div>
 </div>

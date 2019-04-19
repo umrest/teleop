@@ -45,6 +45,13 @@ class Controller : public TeleopBase{
      */
     void updateAll();
     /**
+     * Member function sets all controls to 0.
+     * @param send - If true, sends reset message to rover. Useful when
+     * deactivating controls. Prevents continuous motion if controls are
+     * deactivated while movement commands are being given.
+     */
+    void resetControls(bool send);
+    /**
      * Member function sets a specific input by index and value.
      * @param index - Input index to update
      * @param value - Value to update at the specified index
@@ -53,8 +60,9 @@ class Controller : public TeleopBase{
     /**
      * Member function sends std_msgs::UInt32 msg if the data has changed
      * since the last message was sent.
+     * @param force - If true forces send even is message is unchanged.
      */
-    void sendMessage();
+    void sendMessage(bool force);
     /**
      * Member function which reads controll input and transmits until the
      * end.

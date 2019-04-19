@@ -54,15 +54,17 @@ int TeleopBase::getBits(int bitLength, int offset, bool isSigned){
   unsigned int mask = createMask(bitLength, offset);
 
   // strip the desired bits
-  int value = data & mask;
+  unsigned int value = data & mask;
 
   // shift
   value >>= offset;
+  
+  int intValue = (int)value;
 
   // if the value should be signed, call sign
-  if(isSigned) sign(bitLength, value);
+  if(isSigned) sign(bitLength, intValue);
 
-  return value;
+  return intValue;
 }
 
 unsigned int createMask(int bitLength, int offset){

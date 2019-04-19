@@ -21,6 +21,9 @@ int main(int argc, char **argv){
   // create Controller
   Controller controller(nh);
 
+  // call controller read and transmit
+  controller.readAndTransmit();
+
   return 0;
 
 }

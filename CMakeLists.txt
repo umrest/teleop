@@ -133,6 +133,7 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(station_transmit_node src/teleop/TeleopBase.cpp src/teleop/Controller.cpp src/teleop/station_transmit_node.cpp)
+add_executable(rover_receive_node src/teleop/TeleopBase.cpp src/teleop/ControlReceiver.cpp src/teleop/rover_receive_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -143,9 +144,13 @@ add_executable(station_transmit_node src/teleop/TeleopBase.cpp src/teleop/Contro
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 add_dependencies(station_transmit_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(rover_receive_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(station_transmit_node
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(rover_receive_node
   ${catkin_LIBRARIES}
 )
 

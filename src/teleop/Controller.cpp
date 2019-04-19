@@ -16,20 +16,7 @@ Controller::Controller(ros::NodeHandle& nh_in){
   nh = nh_in;
   control_pub = nh.advertise<std_msgs::UInt32>("/control", 1000);
 
-  for(int i = 0; i < 15; ++i){
-    inputs[i].name = inputNames[i];
-    inputs[i].bitLength = 1;
-    inputs[i].offset = 31 - i;
-    inputs[i].value = 0;
-    inputs[i].axis = false;
-  }
-  for(int i = 15; i < 19; ++i){
-    inputs[i].name = inputNames[i];
-    inputs[i].bitLength = 4;
-    inputs[i].offset = (13 - (4*(i-15)));
-    inputs[i].value = 0;
-    inputs[i].axis = true;
-  }
+  resetControls(false);
 
   active = false;
   debug = false;
@@ -45,13 +32,50 @@ void Controller::updateAll(){
   }
 }
 
+void Controller::resetControls(bool send){
+  for(int i = 0; i < 15; ++i){
+    inputs[i].name = inputNames[i];
+    inputs[i].bitLength = 1;
+    inputs[i].offset = 31 - i;
+    inputs[i].value = 0;
+    inputs[i].axis = false;
+  }
+  for(int i = 15; i < 19; ++i){
+    inputs[i].name = inputNames[i];
+    inputs[i].bitLength = 4;
+    inputs[i].offset = (13 - (4*(i-15)));
+    inputs[i].value = (i > 16 && send) ? -7 : 0;
+    inputs[i].axis = true;
+  }
+  updateAll();
+  if(send){
+    sendMessage(true);
+  }
+}
+
 void Controller::setInput(int index, int value){
-  if(index == 8 && value && inputs[17].value == -7 && inputs[18].value == -7){
+  /*
+
+  this if statement is complicated so I will explain in detail
+  this if checks for input from index 8 which is the center button.
+  index 8 has value 1 the control system should toggle activation.
+  when the controller first starts up, the trigger values are read as 0
+  but when not depressed, the correct trigger value is -7 (or -32767 before
+  the resolution is stepped down). The else if that follows checks to
+  make sure that the triggers have been calibrated (read correctly as
+  -7) before sending any messages. When the triggers are pressed, they
+  are read correctly and the program can proceed as normal. Once the
+  controller has been activated, this problem is eliminated.
+
+  */
+  if((index == 8 && value && inputs[17].value != 0 && inputs[18].value != 0) ||
+     (index == 8 && value && active)){
     active = !active;
     useful = true;
     printf("Controls %s\n", active ? "ACTIVATED" : "DEACTIVATED");
+    if(!active) resetControls(true);
   }
-  else if(index == 8 && value && inputs[17].value != -7 && inputs[18].value != -7){
+  else if(index == 8 && value && inputs[17].value == 0 && inputs[18].value == 0){
     printf("Calibrate triggers by pulling both simultaneously and releasing\n");
     printf("(This only needs to happen once)\n");
   }
@@ -78,8 +102,8 @@ void Controller::setInput(int index, int value){
   }
 }
 
-void Controller::sendMessage(){
-  if(getData() != msg.data){
+void Controller::sendMessage(bool force){
+  if(getData() != msg.data || force){
     msg.data = getData();
     control_pub.publish(msg);
   }
@@ -171,7 +195,7 @@ void Controller::readAndTransmit(){
       }
 
       if(active){
-        sendMessage();
+        sendMessage(false);
       }
     }
 
