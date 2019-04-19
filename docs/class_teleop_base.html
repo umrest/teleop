@@ -40,6 +40,7 @@
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -54,6 +55,15 @@
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_teleop_base_8h_source.html">TeleopBase.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for TeleopBase:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_teleop_base.png" usemap="#TeleopBase_map" alt=""/>
+  <map id="TeleopBase_map" name="TeleopBase_map">
+<area href="class_controller.html" title="This class creates and stores ROS Publisher to handle controller input and send to &#39;/control&#39; topic..." alt="Controller" shape="rect" coords="0,56,78,80"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -61,6 +71,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9fb6a0c6f8c31cfbd4ced4cefdfd6227"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82f0c485e9f52290838270ac66f077ae"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_teleop_base.html#a82f0c485e9f52290838270ac66f077ae">getData</a> ()</td></tr>
 <tr class="separator:a82f0c485e9f52290838270ac66f077ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc3c359db899984feb04631cfeabfc0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_teleop_base.html#abc3c359db899984feb04631cfeabfc0e">setData</a> (unsigned int data_in)</td></tr>
+<tr class="separator:abc3c359db899984feb04631cfeabfc0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20100eb92e14de21d11cdd10bb9ceffc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_teleop_base.html#a20100eb92e14de21d11cdd10bb9ceffc">setBits</a> (int bitLength, int offset, int value)</td></tr>
 <tr class="separator:a20100eb92e14de21d11cdd10bb9ceffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ae17c807860157496447227464bdc82"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_teleop_base.html#a9ae17c807860157496447227464bdc82">getBits</a> (int bitLength, int offset, bool isSigned)</td></tr>
@@ -128,7 +140,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_teleop_base_8cpp_source.html#l00045">45</a> of file <a class="el" href="_teleop_base_8cpp_source.html">TeleopBase.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_teleop_base_8cpp_source.html#l00049">49</a> of file <a class="el" href="_teleop_base_8cpp_source.html">TeleopBase.cpp</a>.</p>
 
 </div>
 </div>
@@ -184,6 +196,30 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">bitLength</td><td>- Length in bits of the value to set </td></tr>
     <tr><td class="paramname">offset</td><td>- Offset in bits of value to set (between 0 and 32) </td></tr>
     <tr><td class="paramname">value</td><td>- Value to set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_teleop_base_8cpp_source.html#l00026">26</a> of file <a class="el" href="_teleop_base_8cpp_source.html">TeleopBase.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abc3c359db899984feb04631cfeabfc0e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TeleopBase::setData </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>data_in</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Member function sets data value. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data_in</td><td>- unsigned int value to set data equal to </td></tr>
   </table>
   </dd>
 </dl>

@@ -30,6 +30,11 @@ class TeleopBase{
      */
     unsigned int getData();
     /**
+     * Member function sets data value.
+     * @param data_in - unsigned int value to set data equal to
+     */
+    void setData(unsigned int data_in);
+    /**
      * Member function sets desired bits in data.
      * @param bitLength - Length in bits of the value to set
      * @param offset - Offset in bits of value to set (between 0 and 32)

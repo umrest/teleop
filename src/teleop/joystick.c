@@ -17,7 +17,6 @@
 #include <stdio.h>
 #include <linux/joystick.h>
 
-
 /**
  * Reads a joystick event from the joystick device.
  *

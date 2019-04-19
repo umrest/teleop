@@ -19,6 +19,10 @@ unsigned int TeleopBase::getData(){
   return data;
 }
 
+void TeleopBase::setData(unsigned int data_in){
+  data = data_in;
+}
+
 void TeleopBase::setBits(int bitLength, int offset, int value){
   assert(bitLength > 0 && bitLength < 32);
   assert(offset >= 0 && offset < 32);
