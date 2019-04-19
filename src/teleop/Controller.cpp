@@ -8,6 +8,10 @@
 #include "Controller.h"
 #include "joystick.c"
 
+/***************************************************************
+**                Functions Definition
+****************************************************************/
+
 Controller::Controller(ros::NodeHandle& nh_in){
   nh = nh_in;
   control_pub = nh.advertise<std_msgs::UInt32>("/control", 1000);
