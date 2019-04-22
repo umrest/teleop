@@ -1,0 +1,8 @@
+Header header
+int16 left_wheel_front
+int16 left_wheel_back
+int16 right_wheel_front
+int16 right_wheel_back
+int16 collection_actuators
+int16 bucket_motor
+int16 excavation_actuator

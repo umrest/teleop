@@ -39,6 +39,8 @@ ControlReceiver::ControlReceiver(ros::NodeHandle& nh_in){
 
   control_sub = nh.subscribe("/control", 1000,
                              &ControlReceiver::handleControlMsg, this);
+  serial_pub = nh.advertise<teleop::ControlMsg>("/serial_control",
+                                                1000);
 }
 
 void ControlReceiver::getAll(){
@@ -52,4 +54,24 @@ void ControlReceiver::getAll(){
 void ControlReceiver::handleControlMsg(const std_msgs::UInt32::ConstPtr& msg){
   setData(msg->data);
   getAll();
+  sendToSerial();
+}
+
+void ControlReceiver::sendToSerial(){
+  teleop::ControlMsg msg;
+
+  // drivetrain
+  msg.left_wheel_front = inputs[LEFTJOY].value * SCALE;
+  msg.left_wheel_back = inputs[LEFTJOY].value * SCALE;
+  msg.right_wheel_front = inputs[RIGHTJOY].value * SCALE;
+  msg.right_wheel_back = inputs[RIGHTJOY].value * SCALE;
+
+  // excavation
+  msg.bucket_motor = (inputs[RT].value + 7) * 12;
+  msg.excavation_actuator = inputs[UP].value;
+
+  // collection
+  msg.collection_actuators = inputs[RIGHT].value;
+
+  serial_pub.publish(msg);  
 }

@@ -49,7 +49,8 @@
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
 <div class="title">ControlReceiver.h File Reference</div>  </div>
 </div><!--header-->
@@ -59,6 +60,7 @@
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;ros/ros.h&quot;</code><br />
 <code>#include &quot;std_msgs/UInt32.h&quot;</code><br />
+<code>#include &quot;teleop/ControlMsg.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="_teleop_base_8h_source.html">TeleopBase.h</a>&quot;</code><br />
 <code>#include &lt;string&gt;</code><br />
 </div>
@@ -70,6 +72,69 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_control_receiver.html">ControlReceiver</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a0cbea62f1ce2043dd08108e65ed8de1d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0cbea62f1ce2043dd08108e65ed8de1d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCALE</b>&#160;&#160;&#160;25</td></tr>
+<tr class="separator:a0cbea62f1ce2043dd08108e65ed8de1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a955f504eccf76b4eb2489c0adab03121"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a955f504eccf76b4eb2489c0adab03121"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>A</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a955f504eccf76b4eb2489c0adab03121"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a111da81ae5883147168bbb8366377b10"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a111da81ae5883147168bbb8366377b10"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>B</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a111da81ae5883147168bbb8366377b10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a207fd5507206d307cd63f95374fcd00d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a207fd5507206d307cd63f95374fcd00d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>X</b>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a207fd5507206d307cd63f95374fcd00d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a798e4073d613ca5ba9618e1b3253df14"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a798e4073d613ca5ba9618e1b3253df14"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>Y</b>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a798e4073d613ca5ba9618e1b3253df14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc55daa58d88a3612f2ef74a6abbe97f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acc55daa58d88a3612f2ef74a6abbe97f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LB</b>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:acc55daa58d88a3612f2ef74a6abbe97f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a171160a766f85c8816b898ed24d28408"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a171160a766f85c8816b898ed24d28408"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>RB</b>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:a171160a766f85c8816b898ed24d28408"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab303ee384877c80cb8855bf0113faf88"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab303ee384877c80cb8855bf0113faf88"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BACK</b>&#160;&#160;&#160;6</td></tr>
+<tr class="separator:ab303ee384877c80cb8855bf0113faf88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3018c7600b7bb9866400596a56a57af7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3018c7600b7bb9866400596a56a57af7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>START</b>&#160;&#160;&#160;7</td></tr>
+<tr class="separator:a3018c7600b7bb9866400596a56a57af7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a824fea1f256659e11e6cd8c82cb13338"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a824fea1f256659e11e6cd8c82cb13338"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CENTER</b>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:a824fea1f256659e11e6cd8c82cb13338"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3938d150df031e2cd1ed24a872128a0a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3938d150df031e2cd1ed24a872128a0a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LEFTJOYIN</b>&#160;&#160;&#160;9</td></tr>
+<tr class="separator:a3938d150df031e2cd1ed24a872128a0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af064c3d03d918a968aa0e66eb175e0fd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af064c3d03d918a968aa0e66eb175e0fd"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>RIGHTJOYIN</b>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:af064c3d03d918a968aa0e66eb175e0fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1965eaca47dbf3f87acdafc2208f04eb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1965eaca47dbf3f87acdafc2208f04eb"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>UP</b>&#160;&#160;&#160;11</td></tr>
+<tr class="separator:a1965eaca47dbf3f87acdafc2208f04eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4193cd1c8c2e6ebd0e056fa2364a663f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4193cd1c8c2e6ebd0e056fa2364a663f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DOWN</b>&#160;&#160;&#160;12</td></tr>
+<tr class="separator:a4193cd1c8c2e6ebd0e056fa2364a663f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a437ef08681e7210d6678427030446a54"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a437ef08681e7210d6678427030446a54"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LEFT</b>&#160;&#160;&#160;13</td></tr>
+<tr class="separator:a437ef08681e7210d6678427030446a54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80fb826a684cf3f0d306b22aa100ddac"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a80fb826a684cf3f0d306b22aa100ddac"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>RIGHT</b>&#160;&#160;&#160;14</td></tr>
+<tr class="separator:a80fb826a684cf3f0d306b22aa100ddac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a970615fa256b100330af870ece4492"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7a970615fa256b100330af870ece4492"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LEFTJOY</b>&#160;&#160;&#160;15</td></tr>
+<tr class="separator:a7a970615fa256b100330af870ece4492"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeba9c5cb9e4c9e5f31fc1b3fd86fb0c2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeba9c5cb9e4c9e5f31fc1b3fd86fb0c2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>RIGHTJOY</b>&#160;&#160;&#160;16</td></tr>
+<tr class="separator:aeba9c5cb9e4c9e5f31fc1b3fd86fb0c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf56b99cbe34023f42ce5b7878c827d8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaf56b99cbe34023f42ce5b7878c827d8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LT</b>&#160;&#160;&#160;17</td></tr>
+<tr class="separator:aaf56b99cbe34023f42ce5b7878c827d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad05d2f1b67cda860903cecd9f21b6b9f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad05d2f1b67cda860903cecd9f21b6b9f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>RT</b>&#160;&#160;&#160;18</td></tr>
+<tr class="separator:ad05d2f1b67cda860903cecd9f21b6b9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class definition for <a class="el" href="class_control_receiver.html">ControlReceiver</a>. </p>

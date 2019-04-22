@@ -7,8 +7,32 @@
 
 #include "ros/ros.h"
 #include "std_msgs/UInt32.h"
+#include "teleop/ControlMsg.h"
 #include "TeleopBase.h"
 #include <string>
+
+#define SCALE 25
+
+#define A 0
+#define B 1
+#define X 2
+#define Y 3
+#define LB 4
+#define RB 5
+#define BACK 6
+#define START 7
+#define CENTER 8
+#define LEFTJOYIN 9
+#define RIGHTJOYIN 10
+#define UP 11
+#define DOWN 12
+#define LEFT 13
+#define RIGHT 14
+#define LEFTJOY 15
+#define RIGHTJOY 16
+#define LT 17
+#define RT 18
+
 
 /***************************************************************
 **                Class Definition
@@ -35,11 +59,13 @@ class ControlReceiver : public TeleopBase{
     ControlReceiver(ros::NodeHandle& nh_in);
     void getAll();
     void handleControlMsg(const std_msgs::UInt32::ConstPtr& msg);
+    void sendToSerial();
 
   private:
     ControlInputs inputs[19];
     ros::NodeHandle nh;
     ros::Subscriber control_sub;
+    ros::Publisher serial_pub;
     std::string inputNames[19] = {"A","B","X","Y","Left Bumper","Right Bumper",
                                 "Back","Start","Center","Left Joytick Button",
                                 "Right Joystick Button","Up","Down","Left",
