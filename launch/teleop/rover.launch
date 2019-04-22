@@ -1,0 +1,4 @@
+<launch>
+  <node name="rover_receive" pkg="teleop" type="rover_receive_node" />
+  <node name="serial_node" pkg="teleop" type="serial_node.py" />
+</launch>
