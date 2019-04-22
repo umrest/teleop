@@ -214,7 +214,7 @@ repository so be sure to follow all of these directions.
 + Next, add the remote repository as the origin, fetch, and checkout
 
   ```bash
-  git remote add origin https://github.com/allisoneaston/REST_RMC.git
+  git remote add origin https://github.com/umrest/teleop.git
   git fetch
   git checkout -t origin/master
   ```
