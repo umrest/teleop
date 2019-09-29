@@ -223,12 +223,10 @@ repository so be sure to follow all of these directions.
   source /opt/ros/kinetic/setup.bash
   ```
 
-+ Get dependencies and run `catkin_make`:
++ Get run `catkin_make`:
 
   ```bash
   cd ~/catkin_ws/
-  chmod +x DEPENDS
-  ./DEPENDS
   catkin_make
   ```
 
@@ -246,3 +244,4 @@ encounter any build issues please shoot me an
 ## Other Notes
 
 **Router Password for Competition**: `Rusty2018`
+**Nuk Password**: `rusty` or `Rusty`
