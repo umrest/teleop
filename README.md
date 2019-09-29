@@ -203,20 +203,17 @@ Once you have a good understanding of **ROS**. You can properly clone
 this repository. This will be slightly different than cloning a normal
 repository so be sure to follow all of these directions.
 
-+ Create a workspace and initialize it as a **git** repository
++ Create a catkin workspace
 
   ```bash
-  mkdir ~/catkin_ws
-  cd ~/catkin_ws
-  git init
+  mkdir -p ~/catkin_ws/src
+  cd ~/catkin_ws/src
   ```
 
-+ Next, add the remote repository as the origin, fetch, and checkout
++ Next, clone the remote repository
 
   ```bash
-  git remote add origin https://github.com/umrest/teleop.git
-  git fetch
-  git checkout -t origin/master
+  git clone https://github.com/umrest/teleop.git
   ```
 
 + Setup Bash (this is redundant if you've added this source
@@ -229,11 +226,18 @@ repository so be sure to follow all of these directions.
 + Get dependencies and run `catkin_make`:
 
   ```bash
-  cd catkin_ws/
+  cd ~/catkin_ws/
   chmod +x DEPENDS
   ./DEPENDS
   catkin_make
   ```
+
++ Whenever you begin working in the catkin workspace run:
+
+```bash
+cd ~/catkin_ws
+source devel/setup.bash
+```
 
 This should add the repository to the catkin workspace properly. If you
 encounter any build issues please shoot me an
