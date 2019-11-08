@@ -244,4 +244,4 @@ encounter any build issues please shoot me an
 ## Other Notes
 
 **Router Password for Competition**: `Rusty2018`
-**Nuk Password**: `rusty` or `Rusty`
+**Nuk Password**: `rusty'
